@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+.env
+
+# Node
+node_modules/
+npm-debug.log
+yarn.lock
+package-lock.json
+
+# Mobile builds
+mobile/android/app/build/
+mobile/android/.gradle/
+mobile/android/.idea/
+mobile/android/gradle/
+mobile/android/local.properties
+
+# Database files
+*.db
+backend/*.db
+
+# Misc
+*.log
+.DS_Store
+coverage/

@@ -1,0 +1,8 @@
+Flask==2.3.2
+# Use a Pillow wheel available on Windows for typical Python versions
+Pillow>=11.2.1,<12
+pyzbar==0.1.8
+requests==2.31.0
+
+# pyzbar requires system libraries (zbar). On Windows, install via
+# choco install zbar or download prebuilt binaries. Alternatively set GOOGLE_API_KEY to use Vision API.

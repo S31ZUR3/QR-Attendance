@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "qr-attendance-mobile",
+    "slug": "qr-attendance-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "platforms": ["android", "ios"],
+    "android": {
+      "package": "com.example.qrattendance",
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "READ_MEDIA_IMAGES"
+      ]
+    }
+  }
+}
