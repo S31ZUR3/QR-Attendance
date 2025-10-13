@@ -127,7 +127,7 @@ def scan_image_and_mark():
         # Reuse db_utils to mark attendance
         result = mark_attendance_data({'regno': regno, 'name': name, 'designation': designation, 'department': dept, 'year': year})
         status_code = 200 if result.get('ok', True) else 400
-        response = {'message': result.get('message'), 'decoded': parsed, 'attendance_id': result.get('attendance_id'), 'is_new': result.get('is_new')}
+        response = {'message': result.get('message'), 'decoded': parsed, 'attendance_id': result.get('attendance_id'), 'is_new': result.get('is_new'), 'time': result.get('time')}
         return jsonify(response), status_code
 
     except Exception as e:
@@ -161,7 +161,7 @@ def export_csv():
     conn = sqlite3.connect(DB_NAME)
     cur = conn.cursor()
     cur.execute("""
-        SELECT attendance.id, attendance.regno, members.name, members.designation, members.department, members.year, attendance.date
+        SELECT attendance.id, attendance.regno, members.name, members.designation, members.department, members.year, attendance.date, attendance.time
         FROM attendance
         JOIN members ON attendance.regno = members.regno
         WHERE attendance.date = ?
@@ -172,7 +172,7 @@ def export_csv():
 
     output = io.StringIO()
     writer = csv.writer(output)
-    writer.writerow(['id','regno','name','designation','department','year','date'])
+    writer.writerow(['id','regno','name','designation','department','year','date','time'])
     for r in rows:
         writer.writerow(r)
 
