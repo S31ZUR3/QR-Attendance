@@ -16,8 +16,7 @@ Backend setup (Windows)
 2. python -m venv .venv
 3. .\.venv\Scripts\activate
 4. pip install -r requirements.txt
-5. (Optional) install zbar on Windows (choco install zbar) or set `GOOGLE_API_KEY` env var to use Google Vision API fallback
-6. python app.py
+5. python app.py
 
 The server binds to `0.0.0.0:5000` by default, so a phone on the same LAN can reach it at `http://<your-pc-ip>:5000`.
 
@@ -54,4 +53,5 @@ Notes
 - On Android emulators use `http://10.0.2.2:5000` to reach the host machine. On a real device set the Server URL inside the app to `http://<your-pc-lan-ip>:5000`.
 - Keep `attendance.db` out of git unless you want pre-seeded data (added `.gitignore` to exclude `*.db`).
 - If you want local QR decoding, install Pillow and pyzbar and the zbar native library.
+
 
